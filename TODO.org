@@ -1,0 +1,2 @@
+* TODO ={for-each,map,reduce}-{un}ordered-subsets= with optional =k=
+  These should cover all cases, right?
