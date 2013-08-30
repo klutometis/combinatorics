@@ -8,9 +8,6 @@
          define-record-and-printer
          srfi-1)
     
-    (define-record-and-printer sentinel)
-    (define sentinel (make-sentinel))
-    
     (define ordered-subset-for-each
       (case-lambda
        ((f list)
