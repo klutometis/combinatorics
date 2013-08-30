@@ -33,11 +33,16 @@
         (let ((nil (make-parameter nil)))
           (ordered-subset-for-each
            (lambda (subset)
-             (nil (cons nil)))
-           list k)))))
+             (nil (cons subset (nil))))
+           list k)
+          (nil)))))
     
-    ;; (ordered-subset-for-each display '(1 2 3 4) 3)
-    ;; (ordered-subset-fold cons '() '(1 2 3 4))
+    (define ordered-subset-map
+      (case-lambda
+       ((f list) (ordered-subset-map f list (length list)))
+       ((f list k)
+        (ordered-subset-fold cons '() list k))))
+    
   #+END_SRC
 
   Is =reduce= or =fold= sufficient to implement =for-each= and =map=?
