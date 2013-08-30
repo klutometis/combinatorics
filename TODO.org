@@ -8,15 +8,40 @@
          define-record-and-printer
          srfi-1)
     
-    (define-record-and-printer sentinel)
-    (define sentinel (make-sentinel))
+    (define ordered-subset-for-each
+      (case-lambda
+       ((f list)
+        (for-each-ordered-subset list (length list)))
+       ((f list k)
+        (let iter ((list list)
+                   (k k) 
+                   (subset '()))
+          (if (zero? k)
+              (f subset)
+              (for-each
+                  (lambda (element)
+                    (iter (delete element list)
+                          (sub1 k)
+                          (cons element subset)))
+                list))))))
     
-    (define (for-each-ordered-subset list)
-      (let iter ((k (length list))
-                 (list (apply circular-list (cons sentinel list))))
-        ))
+    (define ordered-subset-fold
+      (case-lambda
+       ((cons nil list)
+        (ordered-subset-fold cons nil list (length list)))
+       ((cons nil list k)
+        (let ((nil (make-parameter nil)))
+          (ordered-subset-for-each
+           (lambda (subset)
+             (nil (cons subset (nil))))
+           list k)
+          (nil)))))
     
-    (debug (for-each-ordered-subset '(1 2 3)))
+    (define ordered-subset-map
+      (case-lambda
+       ((f list) (ordered-subset-map f list (length list)))
+       ((f list k)
+        (ordered-subset-fold cons '() list k))))
   #+END_SRC
 
   Is =reduce= or =fold= sufficient to implement =for-each= and =map=?
