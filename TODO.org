@@ -12,7 +12,9 @@
     (define sentinel (make-sentinel))
     
     (define (for-each-ordered-subset list)
-      (apply circular-list (cons sentinel list)))
+      (let iter ((k (length list))
+                 (list (apply circular-list (cons sentinel list))))
+        ))
     
     (debug (for-each-ordered-subset '(1 2 3)))
   #+END_SRC
