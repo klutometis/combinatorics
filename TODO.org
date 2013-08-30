@@ -2,3 +2,35 @@
   These should cover all cases, right?
   See [[http://stackoverflow.com/questions/2710713/algorithm-to-generate-all-possible-permutations-of-a-list][here]] for permutations; [[http://stackoverflow.com/questions/127704/algorithm-to-return-all-combinations-of-k-elements-from-n][here]] for combinations. Permutations (e.g.
   ordered subsets) look simpler.
+
+  #+BEGIN_SRC scheme
+    (use debug
+         define-record-and-printer
+         srfi-1)
+    
+    (define-record-and-printer sentinel)
+    (define sentinel (make-sentinel))
+    
+    (define (for-each-ordered-subset list)
+      (apply circular-list (cons sentinel list)))
+    
+    (debug (for-each-ordered-subset '(1 2 3)))
+  #+END_SRC
+
+  Is =reduce= or =fold= sufficient to implement =for-each= and =map=?
+
+  Let’s make this bitch circular; pop a sentinel on there; and
+  recurse.
+
+  Hmm: we either have to copy the list or destroy it to [[http://stackoverflow.com/questions/14678943/scheme-streams-and-circular-lists][make it
+  circular]]:
+
+  #+BEGIN_SRC scheme
+    (define (circular-list val1 . vals)
+      (let ((ans (cons val1 vals)))
+        (set-cdr! (last-pair ans) ans)
+            ans))
+  #+END_SRC
+
+  We can =apply= the list to =circular-list=, but we run up against
+  the =apply= ceiling; fuck it, let’s run up against it for now.
