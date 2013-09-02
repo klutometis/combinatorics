@@ -1,0 +1,13 @@
+(include "setup-helper")
+
+(verify-extension-name "combinatorics")
+
+(setup-shared-extension-module
+ 'combinatorics
+ (extension-version "0.1")
+ compile-options: '(-X cock))
+
+(handle-exceptions exn
+  (warning "Not generating documentation")
+  (include "setup-helper-cock")
+  (run-cock -o combinatorics.wiki combinatorics-core.scm))

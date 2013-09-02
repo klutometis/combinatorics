@@ -1,0 +1,22 @@
+== combinatorics
+
+Combinatorics
+[[toc:]]
+=== About this egg
+
+==== Author
+
+[[/users/klutometis|Peter Danenberg]]
+==== Repository
+[[https://github.com/klutometis/combinatorics]]
+==== License
+BSD
+==== Dependencies
+* [[cock]]
+* [[cock-utils]]
+* [[setup-helper]]
+
+
+==== Colophon
+
+Documented by [[/egg/cock|cock]].
