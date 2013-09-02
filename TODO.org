@@ -61,3 +61,11 @@
 
   We can =apply= the list to =circular-list=, but we run up against
   the =apply= ceiling; fuck it, let’s run up against it for now.
+* TODO Replacement
+  [[http://rosettacode.org/wiki/Combinations][Replacement]] is another dimension, too. Damn. Provide replacement as
+  a flag, or use another procedure?
+
+  This merely affects (at least in the case of permutations), the
+  delete operations.
+* TODO Multi-sets
+  We need an e.g. =delete-first= for [[http://compprog.wordpress.com/2007/10/17/generating-combinations-1/][multi-sets]].
