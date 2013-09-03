@@ -1,7 +1,7 @@
 (define ordered-subset-for-each
   (case-lambda
    ((f list)
-    (ordered-subset-for-each list (length list)))
+    (ordered-subset-for-each f list (length list)))
    ((f list k)
     (let iter ((list list)
                (k k) 
