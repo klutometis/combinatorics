@@ -61,6 +61,9 @@
 
   We can =apply= the list to =circular-list=, but we run up against
   the =apply= ceiling; fuck it, let’s run up against it for now.
+
+  See [[http://www.cs.colostate.edu/~anderson/cs161/wiki/doku.php?do%3Dexport_s5&id%3Dslides:week8#slide14][this talk]]; uses the multiple index trick. There are [[http://www.cs.utexas.edu/users/djimenez/utsa/cs3343/lecture25.html][some more
+  notes]].
 * TODO Replacement
   [[http://rosettacode.org/wiki/Combinations][Replacement]] is another dimension, too. Damn. Provide replacement as
   a flag, or use another procedure?
