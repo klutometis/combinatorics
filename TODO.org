@@ -64,6 +64,12 @@
 
   See [[http://www.cs.colostate.edu/~anderson/cs161/wiki/doku.php?do%3Dexport_s5&id%3Dslides:week8#slide14][this talk]]; uses the multiple index trick. There are [[http://www.cs.utexas.edu/users/djimenez/utsa/cs3343/lecture25.html][some more
   notes]].
+  
+  [[http://wwwx.cs.unc.edu/~snape/publications/msc/thesis.pdf][This guy]] did it functionally.
+
+  See: Ehrlich, G. (1973b). Loopless algorithms for generating
+  permutations, combinations, and other combinatorial configurations.
+  Journal of the ACM 20 (3) 500–513.
 * TODO Replacement
   [[http://rosettacode.org/wiki/Combinations][Replacement]] is another dimension, too. Damn. Provide replacement as
   a flag, or use another procedure?
