@@ -77,11 +77,10 @@
          vector-lib)
     
     (define (project subset list)
-      ;; Vector-fold-right places the projection in lexical order.
-      (vector-fold-right (lambda (i projection j)
-                           (cons (list-ref list j) projection))
-                         '()
-                         subset))
+      (vector-fold (lambda (i projection j)
+                     (cons (list-ref list j) projection))
+                   '()
+                   subset))
     
     ;;; Thanks, Daniel Ángel Jiménez:
     ;;; <http://www.cs.utexas.edu/users/djimenez/utsa/cs3343/lecture25.html>.
@@ -101,7 +100,28 @@
                   (vector-set! subset p i)
                   (iter (add1 i) (add1 p)))))))))
     
+    (define unordered-subset-fold
+      (case-lambda
+       ((cons nil list)
+        (unordered-subset-fold cons nil list (length list)))
+       ((cons nil list k)
+        (let ((nil (make-parameter nil)))
+          (unordered-subset-for-each
+           (lambda (subset)
+             (nil (cons subset (nil))))
+           list
+           k)
+          (nil)))))
+    
+    (define unordered-subset-map
+      (case-lambda
+       ((f list) (unordered-subset-map f list (length list)))
+       ((f list k)
+        (unordered-subset-fold cons '() list k))))
+    
     (unordered-subset-for-each display '(1 2 3 4) 3)
+    (debug (unordered-subset-fold cons '() '(1 2 3 4) 3)
+           (unordered-subset-map values '(1 2 3 4) 3))
   #+END_SRC
 * TODO Replacement
   [[http://rosettacode.org/wiki/Combinations][Replacement]] is another dimension, too. Damn. Provide replacement as
