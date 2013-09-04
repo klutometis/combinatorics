@@ -16,11 +16,11 @@ combinations (unordered subsets) of lists.
 ==== {{ordered-subset-for-each}}
 <procedure>(ordered-subset-for-each f list) → unspecified</procedure>
 <procedure>(ordered-subset-for-each f list k) → unspecified</procedure>
-Iterate over every ''k''-permutation (ordered subset) of {{list}},
+Iterate over every ''k''-permutation (partial ordered subset) of {{list}},
 calling {{f}} for its side effect.
 ; f : The function to call
 ; list : The list to permute
-; k : ''k'' distinct elements
+; k : ''k'' distinct elements (default: ''n'')
 <enscript highlight="scheme">(define ordered-subset-for-each
   (case-lambda
     ((f list) (ordered-subset-for-each f list (length list)))
@@ -36,13 +36,13 @@ calling {{f}} for its side effect.
 ==== {{ordered-subset-fold}}
 <procedure>(ordered-subset-fold cons nil list) → object</procedure>
 <procedure>(ordered-subset-fold cons nil list k) → object</procedure>
-Recombine every ''k''-permutation (ordered subset) of {{list}},
+Recombine every ''k''-permutation (partial ordered subset) of {{list}},
 starting with a base-case {{nil}}, and calling {{cons}} with 1. a
 permutation and 2. the accumulated value.
 ; cons : The combining function
 ; nil : The base case
 ; list : The list to recombine
-; k : ''k'' distinct elements
+; k : ''k'' distinct elements (default: ''n'')
 <enscript highlight="scheme">(define ordered-subset-fold
   (case-lambda
     ((cons nil list) (ordered-subset-fold cons nil list (length list)))
@@ -57,10 +57,10 @@ permutation and 2. the accumulated value.
 ==== {{ordered-subset-map}}
 <procedure>(ordered-subset-map f list) → list</procedure>
 <procedure>(ordered-subset-map f list k) → list</procedure>
-Map every ''k''-permutation (ordered subset) of {{list}} using {{f}}.
+Map every ''k''-permutation (partial ordered subset) of {{list}} using {{f}}.
 ; f : The mapping function
 ; list : The list to map
-; k : ''k'' distinct elements
+; k : ''k'' distinct elements (default: ''n'')
 <enscript highlight="scheme">(define ordered-subset-map
   (case-lambda
     ((f list) (ordered-subset-map f list (length list)))
@@ -69,11 +69,11 @@ Map every ''k''-permutation (ordered subset) of {{list}} using {{f}}.
 ==== {{unordered-subset-for-each}}
 <procedure>(unordered-subset-for-each f list) → unspecified</procedure>
 <procedure>(unordered-subset-for-each f list k) → unspecified</procedure>
-Iterate over every ''k''-combination (unordered subset) of {{list}},
+Iterate over every ''k''-combination (partial unordered subset) of {{list}},
 calling {{f}} for its side effect.
 ; f : The function to call
 ; list : The list to permute
-; k : ''k'' distinct elements
+; k : ''k'' distinct elements (default: ''n'')
 <enscript highlight="scheme">(define unordered-subset-for-each
   (case-lambda
     ((f list) (unordered-subset-for-each f list (length list)))
@@ -90,13 +90,13 @@ calling {{f}} for its side effect.
 ==== {{unordered-subset-fold}}
 <procedure>(unordered-subset-fold cons nil list) → object</procedure>
 <procedure>(unordered-subset-fold cons nil list k) → object</procedure>
-Recombine every ''k''-combination (unordered subset) of {{list}},
+Recombine every ''k''-combination (partial unordered subset) of {{list}},
 starting with a base-case {{nil}}, and calling {{cons}} with 1. a
 combination and 2. the accumulated value.
 ; cons : The combining function
 ; nil : The base case
 ; list : The list to recombine
-; k : ''k'' distinct elements
+; k : ''k'' distinct elements (default: ''n'')
 <enscript highlight="scheme">(define unordered-subset-fold
   (case-lambda
     ((cons nil list) (unordered-subset-fold cons nil list (length list)))
@@ -111,10 +111,10 @@ combination and 2. the accumulated value.
 ==== {{unordered-subset-map}}
 <procedure>(unordered-subset-map f list) → list</procedure>
 <procedure>(unordered-subset-map f list k) → list</procedure>
-Map every ''k''-combination (unordered subset) of {{list}} using {{f}}.
+Map every ''k''-combination (partial unordered subset) of {{list}} using {{f}}.
 ; f : The mapping function
 ; list : The list to map
-; k : ''k'' distinct elements
+; k : ''k'' distinct elements (default: ''n'')
 <enscript highlight="scheme">(define unordered-subset-map
   (case-lambda
     ((f list) (unordered-subset-map f list (length list)))
@@ -131,13 +131,13 @@ Map every ''k''-combination (unordered subset) of {{list}} using {{f}}.
 BSD
 ==== Dependencies
 * [[cock]]
-* [[cock-utils]]
 * [[setup-helper]]
 * [[vector-lib]]
 
 ==== Versions
 ; 0.1 : Start with ordered-subset operations.
 ; 0.2 : Add unordered subset operations.
+; 0.3 : Add documentation.
 ==== Colophon
 
 Documented by [[/egg/cock|cock]].
