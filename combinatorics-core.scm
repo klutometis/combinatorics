@@ -32,3 +32,46 @@
    ((f list) (ordered-subset-map f list (length list)))
    ((f list k)
     (ordered-subset-fold cons '() list k))))
+
+(define (project subset list)
+  (vector-fold (lambda (i projection j)
+                 (cons (list-ref list j) projection))
+               '()
+               subset))
+
+;;; Thanks, Daniel Ángel Jiménez:
+;;; <http://www.cs.utexas.edu/users/djimenez/utsa/cs3343/lecture25.html>.
+(define unordered-subset-for-each
+  (case-lambda
+   ((f list)
+    (unordered-subset-for-each f list (length list)))
+   ((f list k)
+    (let ((subset (make-vector k))
+          (n (length list)))
+      (let iter ((start 0)
+                 (p 0))
+        (if (= p k)
+            (f (project subset list))
+            (do ((i start (+ i 1)))
+                ((= i n))
+              (vector-set! subset p i)
+              (iter (add1 i) (add1 p)))))))))
+
+(define unordered-subset-fold
+  (case-lambda
+   ((cons nil list)
+    (unordered-subset-fold cons nil list (length list)))
+   ((cons nil list k)
+    (let ((nil (make-parameter nil)))
+      (unordered-subset-for-each
+       (lambda (subset)
+         (nil (cons subset (nil))))
+       list
+       k)
+      (nil)))))
+
+(define unordered-subset-map
+  (case-lambda
+   ((f list) (unordered-subset-map f list (length list)))
+   ((f list k)
+    (unordered-subset-fold cons '() list k))))
