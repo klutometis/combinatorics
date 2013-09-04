@@ -8,5 +8,5 @@
  (depends cock
           setup-helper
           vector-lib)
- (test-depends)
+ (test-depends test)
  (foreign-depends))
