@@ -70,6 +70,38 @@
   See: Ehrlich, G. (1973b). Loopless algorithms for generating
   permutations, combinations, and other combinatorial configurations.
   Journal of the ACM 20 (3) 500–513.
+
+  #+BEGIN_SRC scheme
+    (use debug
+         vector-lib)
+    
+    (define (project subset list)
+      ;; Vector-fold-right places the projection in lexical order.
+      (vector-fold-right (lambda (i projection j)
+                           (cons (list-ref list j) projection))
+                         '()
+                         subset))
+    
+    ;;; Thanks, Daniel Ángel Jiménez:
+    ;;; <http://www.cs.utexas.edu/users/djimenez/utsa/cs3343/lecture25.html>.
+    (define unordered-subset-for-each
+      (case-lambda
+       ((f list)
+        (unordered-subset-for-each f list (length list)))
+       ((f list k)
+        (let ((subset (make-vector k))
+              (n (length list)))
+          (let iter ((start 0)
+                     (p 0))
+            (if (= p k)
+                (f (project subset list))
+                (do ((i start (+ i 1)))
+                    ((= i n))
+                  (vector-set! subset p i)
+                  (iter (add1 i) (add1 p)))))))))
+    
+    (unordered-subset-for-each display '(1 2 3 4) 3)
+  #+END_SRC
 * TODO Replacement
   [[http://rosettacode.org/wiki/Combinations][Replacement]] is another dimension, too. Damn. Provide replacement as
   a flag, or use another procedure?
