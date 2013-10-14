@@ -142,6 +142,7 @@ BSD
 ; 0.3 : Add documentation.
 ; 0.3.1 : Add some tests.
 ; 0.3.2 : Tests depend on `test'.
+; 0.3.3 : Actually map the values.
 ==== Colophon
 
 Documented by [[/egg/cock|cock]].
