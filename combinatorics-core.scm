@@ -60,7 +60,7 @@ permutation and 2. the accumulated value."
   (case-lambda
    ((f list) (ordered-subset-map f list (length list)))
    ((f list k)
-    (ordered-subset-fold cons '() list k))))
+    (ordered-subset-fold (lambda (v a) (cons (f v) a)) '() list k))))
 
 (define (project subset list)
   (vector-fold (lambda (i projection j)
@@ -121,4 +121,4 @@ combination and 2. the accumulated value."
   (case-lambda
    ((f list) (unordered-subset-map f list (length list)))
    ((f list k)
-    (unordered-subset-fold cons '() list k))))
+    (unordered-subset-fold (lambda (v a) (cons (f v) a)) '() list k))))
