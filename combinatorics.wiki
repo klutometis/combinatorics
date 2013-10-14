@@ -64,7 +64,8 @@ Map every ''k''-permutation (partial ordered subset) of {{list}} using {{f}}.
 <enscript highlight="scheme">(define ordered-subset-map
   (case-lambda
     ((f list) (ordered-subset-map f list (length list)))
-    ((f list k) (ordered-subset-fold cons '() list k))))
+    ((f list k)
+     (ordered-subset-fold (lambda (v a) (cons (f v) a)) '() list k))))
 </enscript>
 ==== {{unordered-subset-for-each}}
 <procedure>(unordered-subset-for-each f list) → unspecified</procedure>
@@ -118,7 +119,8 @@ Map every ''k''-combination (partial unordered subset) of {{list}} using {{f}}.
 <enscript highlight="scheme">(define unordered-subset-map
   (case-lambda
     ((f list) (unordered-subset-map f list (length list)))
-    ((f list k) (unordered-subset-fold cons '() list k))))
+    ((f list k)
+     (unordered-subset-fold (lambda (v a) (cons (f v) a)) '() list k))))
 </enscript>
 === About this egg
 
