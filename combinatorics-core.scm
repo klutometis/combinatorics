@@ -122,3 +122,27 @@ combination and 2. the accumulated value."
    ((f list) (unordered-subset-map f list (length list)))
    ((f list k)
     (unordered-subset-fold (lambda (v a) (cons (f v) a)) '() list k))))
+
+(define permutation-for-each
+  @("Synonym for [[#ordered-subset-for-each]]")
+  ordered-subset-for-each)
+
+(define permutation-fold
+  @("Synonym for [[#ordered-subset-fold]]")
+  ordered-subset-fold)
+
+(define permutation-map
+  @("Synonym for [[#ordered-subset-map]]")
+  ordered-subset-map)
+
+(define combination-for-each
+  @("Synonym for [[#unordered-subset-for-each]]")
+  unordered-subset-for-each)
+
+(define combination-fold
+  @("Synonym for [[#unordered-subset-fold]]")
+  unordered-subset-fold)
+
+(define combination-map
+  @("Synonym for [[#unordered-subset-map]]")
+  unordered-subset-map)
