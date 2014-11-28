@@ -1,4 +1,5 @@
 (include "setup-helper")
+(include "setup-helper-cock")
 
 (verify-extension-name "combinatorics")
 
@@ -7,7 +8,4 @@
  (extension-version "0.3.3")
  compile-options: '(-X cock))
 
-(handle-exceptions exn
-  (warning "Not generating documentation")
-  (include "setup-helper-cock")
-  (run-cock -o combinatorics.wiki combinatorics-core.scm))
+(run-cock -o combinatorics.wiki combinatorics-core.scm)
