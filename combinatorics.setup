@@ -5,7 +5,7 @@
 
 (setup-shared-extension-module
  'combinatorics
- (extension-version "0.3.3")
+ (extension-version "0.3.4")
  compile-options: '(-X cock))
 
 (run-cock -o combinatorics.wiki combinatorics-core.scm)
