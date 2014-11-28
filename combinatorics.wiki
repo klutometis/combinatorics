@@ -122,6 +122,36 @@ Map every ''k''-combination (partial unordered subset) of {{list}} using {{f}}.
     ((f list k)
      (unordered-subset-fold (lambda (v a) (cons (f v) a)) '() list k))))
 </enscript>
+==== {{permutation-for-each}}
+<constant>permutation-for-each → ordered-subset-for-each</constant>
+Synonym for [[#ordered-subset-for-each]]
+<enscript highlight="scheme">(define permutation-for-each ordered-subset-for-each)
+</enscript>
+==== {{permutation-fold}}
+<constant>permutation-fold → ordered-subset-fold</constant>
+Synonym for [[#ordered-subset-fold]]
+<enscript highlight="scheme">(define permutation-fold ordered-subset-fold)
+</enscript>
+==== {{permutation-map}}
+<constant>permutation-map → ordered-subset-map</constant>
+Synonym for [[#ordered-subset-map]]
+<enscript highlight="scheme">(define permutation-map ordered-subset-map)
+</enscript>
+==== {{combination-for-each}}
+<constant>combination-for-each → unordered-subset-for-each</constant>
+Synonym for [[#unordered-subset-for-each]]
+<enscript highlight="scheme">(define combination-for-each unordered-subset-for-each)
+</enscript>
+==== {{combination-fold}}
+<constant>combination-fold → unordered-subset-fold</constant>
+Synonym for [[#unordered-subset-fold]]
+<enscript highlight="scheme">(define combination-fold unordered-subset-fold)
+</enscript>
+==== {{combination-map}}
+<constant>combination-map → unordered-subset-map</constant>
+Synonym for [[#unordered-subset-map]]
+<enscript highlight="scheme">(define combination-map unordered-subset-map)
+</enscript>
 === About this egg
 
 ==== Author
@@ -134,15 +164,17 @@ BSD
 ==== Dependencies
 * [[cock]]
 * [[setup-helper]]
+* [[setup-helper-cock]]
 * [[vector-lib]]
 
 ==== Versions
-; 0.1 : Start with ordered-subset operations.
-; 0.2 : Add unordered subset operations.
-; 0.3 : Add documentation.
-; 0.3.1 : Add some tests.
-; 0.3.2 : Tests depend on `test'.
-; 0.3.3 : Actually map the values.
+; [[https://github.com/klutometis/combinatorics/releases/tag/0.3.4|0.3.4]] : Add the combination- and permutation-synonyms.
+; [[https://github.com/klutometis/combinatorics/releases/tag/0.1|0.1]] : Start with ordered-subset operations.
+; [[https://github.com/klutometis/combinatorics/releases/tag/0.2|0.2]] : Add unordered subset operations.
+; [[https://github.com/klutometis/combinatorics/releases/tag/0.3|0.3]] : Add documentation.
+; [[https://github.com/klutometis/combinatorics/releases/tag/0.3.1|0.3.1]] : Add some tests.
+; [[https://github.com/klutometis/combinatorics/releases/tag/0.3.2|0.3.2]] : Tests depend on `test'.
+; [[https://github.com/klutometis/combinatorics/releases/tag/0.3.3|0.3.3]] : Actually map the values.
 ==== Colophon
 
 Documented by [[/egg/cock|cock]].
