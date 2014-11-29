@@ -164,7 +164,6 @@ BSD
 ==== Dependencies
 * [[cock]]
 * [[setup-helper]]
-* [[setup-helper-cock]]
 * [[vector-lib]]
 
 ==== Versions

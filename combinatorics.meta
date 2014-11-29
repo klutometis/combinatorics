@@ -7,7 +7,6 @@
  (license "BSD")
  (depends cock
           setup-helper
-          setup-helper-cock
           vector-lib)
  (test-depends test)
  (foreign-depends))
