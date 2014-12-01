@@ -1,5 +1,4 @@
-(include "setup-helper")
-(include "setup-helper-cock")
+(use cock setup-helper-mod)
 
 (verify-extension-name "combinatorics")
 
