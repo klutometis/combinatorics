@@ -5,7 +5,7 @@
  (repo "https://github.com/klutometis/combinatorics")
  (category data)
  (license "BSD")
- (depends cock
+ (depends (hahn "0.9.3")
           setup-helper
           vector-lib)
  (test-depends test)
