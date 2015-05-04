@@ -162,7 +162,7 @@ Synonym for [[#unordered-subset-map]]
 ==== License
 BSD
 ==== Dependencies
-* [[(hahn 0.9.3)]]
+* [[hahn]]
 * [[setup-helper]]
 * [[vector-lib]]
 
@@ -177,6 +177,7 @@ BSD
 ; [[https://github.com/klutometis/combinatorics/releases/tag/0.3.5|0.3.5]] : Remove the dependency on setup-helper-cock.
 ; [[https://github.com/klutometis/combinatorics/releases/tag/0.3.6|0.3.6]] : Bump the version.
 ; [[https://github.com/klutometis/combinatorics/releases/tag/0.3.7|0.3.7]] : Use `use' instead of `include'.
+; [[https://github.com/klutometis/combinatorics/releases/tag/0.3.8|0.3.8]] : Use hahn.
 ==== Colophon
 
 Documented by [[/egg/hahn|hahn]].
