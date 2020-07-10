@@ -1,0 +1,12 @@
+((synopsis "Combinatorics")
+ (author "Peter Danenberg")
+ (license "BSD")
+ (category data)
+ (dependencies hahn vector-lib)
+ (build-dependencies hahn)
+ (component-options
+   (csc-options "-O3" "-d1" "-X" "hahn"))
+ (components
+  (extension combinatorics)))
+
+; vim: set ft=scheme:

@@ -1,0 +1,5 @@
+*.sh
+*.o
+*.so
+*.link
+*.import.scm
