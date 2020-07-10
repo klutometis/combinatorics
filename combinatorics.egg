@@ -2,8 +2,8 @@
  (author "Peter Danenberg")
  (license "BSD")
  (category data)
- (dependencies hahn vector-lib)
- (build-dependencies hahn)
+ (dependencies (hahn "0.9.3") vector-lib)
+ (build-dependencies (hahn "0.9.3"))
  (component-options
    (csc-options "-O3" "-d1" "-X" "hahn"))
  (components
