@@ -4,7 +4,7 @@
 
 (setup-shared-extension-module
  'combinatorics
- (extension-version "0.3.8")
+ (extension-version "0.3.9")
  compile-options: '(-X hahn))
 
 (run-hahn -o combinatorics.wiki combinatorics-core.scm)

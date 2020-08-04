@@ -178,6 +178,7 @@ BSD
 ; [[https://github.com/klutometis/combinatorics/releases/tag/0.3.6|0.3.6]] : Bump the version.
 ; [[https://github.com/klutometis/combinatorics/releases/tag/0.3.7|0.3.7]] : Use `use' instead of `include'.
 ; [[https://github.com/klutometis/combinatorics/releases/tag/0.3.8|0.3.8]] : Use hahn.
+; [[https://github.com/klutometis/combinatorics/releases/tag/0.3.9|0.3.9]] : Port to C5
 ==== Colophon
 
 Documented by [[/egg/hahn|hahn]].
