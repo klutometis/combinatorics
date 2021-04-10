@@ -1,5 +1,6 @@
-(use combinatorics
-     test)
+(import
+  combinatorics
+  test)
 
 (test "Permutations"
       '((b c) (a c) (c b) (a b) (c a) (b a))
